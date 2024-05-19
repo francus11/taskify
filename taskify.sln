@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taskify.Server", "taskify.Server\taskify.Server.csproj", "{13E1846B-A20B-4596-84CC-8E479988ED04}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "taskify.client", "taskify.client\taskify.client.esproj", "{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13E1846B-A20B-4596-84CC-8E479988ED04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E1846B-A20B-4596-84CC-8E479988ED04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E1846B-A20B-4596-84CC-8E479988ED04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E1846B-A20B-4596-84CC-8E479988ED04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4B16C6-1FA5-4DB0-9918-0594A4B1C136}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24B49561-174B-4774-85B5-B55CD91F4227}
+	EndGlobalSection
+EndGlobal
