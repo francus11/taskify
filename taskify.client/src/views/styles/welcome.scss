@@ -1,0 +1,13 @@
+@import './mixins';
+@import './variables';
+
+.welcome {
+    @include flexCenter(column);
+    gap: 2rem;
+
+    &__logo {
+        @include flexCenter(row);
+        gap: 2rem;
+        color: $purpleGrade;
+    }
+}

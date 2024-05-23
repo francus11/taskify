@@ -1,0 +1,21 @@
+html {
+  font-size: 10px;
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+.header {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #030047;
+}/*# sourceMappingURL=global.css.map */
