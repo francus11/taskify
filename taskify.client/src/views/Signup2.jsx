@@ -17,20 +17,15 @@ class Login extends React.Component {
             <Layout>
             <main className='welcome'>
                 <div className='welcomeText'>
-                    <h2 className='header'>Sign up</h2>
+                    <h2 className='header'>Step 2</h2>
                 </div>
-                <StyledInput placeholder='example@gmail.com' text='Email'></StyledInput>
-                <StyledInput type='password' placeholder='password' text='Create password'></StyledInput>
-                <StyledInput type='password' placeholder='repeat password' text='Confirm password'></StyledInput>
-                <Facebook text='Continue with Facebook' type='fb' />
-                <Facebook text='Continue with Google' type='gl' />
+                <StyledInput placeholder='Michaek' text='Name'></StyledInput>
+                <StyledInput placeholder='Plain' text='Surname'></StyledInput>
+                <StyledInput placeholder='Dzikakotka' text='Username'></StyledInput>
+                <StyledInput placeholder='+48 123 456 789' text='Phone number'></StyledInput>              
                 
-                <Link to='/reg2'>
-                   <Button text='Sign up'></Button> 
-                </Link>
+                <Button text='Sign up'></Button>
                 <p className='subtext'>Already have account? <Link to='/log'><span className='subtext__span'>Log in</span></Link></p>
-
-                
 
 
             

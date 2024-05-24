@@ -18,4 +18,13 @@ body {
   font-size: 4rem;
   font-weight: 800;
   color: #030047;
+}
+
+.subtext {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #030047;
+}
+.subtext__span {
+  font-weight: bold;
 }/*# sourceMappingURL=global.css.map */
