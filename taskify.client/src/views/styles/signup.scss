@@ -1,0 +1,8 @@
+@import './mixins';
+
+.ContinueWith {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include flexCenter(column);
+    gap : 1.5rem;
+}

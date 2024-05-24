@@ -22,8 +22,12 @@ class Login extends React.Component {
                 <StyledInput placeholder='example@gmail.com' text='Email'></StyledInput>
                 <StyledInput type='password' placeholder='password' text='Create password'></StyledInput>
                 <StyledInput type='password' placeholder='repeat password' text='Confirm password'></StyledInput>
-                <Facebook text='Continue with Facebook' type='fb' />
-                <Facebook text='Continue with Google' type='gl' />
+
+                <div className='ContinueWith'>
+                    <Facebook text='Continue with Facebook' type='fb' />
+                    <Facebook text='Continue with Google' type='gl' />
+                </div>
+                
                 
                 <Link to='/reg2'>
                    <Button text='Sign up'></Button> 

@@ -1,1 +1,9 @@
-/*# sourceMappingURL=signup.css.map */
+.ContinueWith {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}/*# sourceMappingURL=signup.css.map */

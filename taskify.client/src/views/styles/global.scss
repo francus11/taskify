@@ -33,3 +33,18 @@ body {
         font-weight: bold;
     }
 }
+
+.subtext__forgot {
+    text-decoration: none;
+    text-align: right;
+    margin-right: 2rem;
+    width: 30rem;
+
+    
+    font-size: 1.5rem;
+    color: $purpleGrade;
+
+    &__span {
+        font-weight: bold;
+    }
+}

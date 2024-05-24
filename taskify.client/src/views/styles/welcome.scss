@@ -3,7 +3,7 @@
 
 .welcome {
     @include flexCenter(column);
-    gap: 2rem;
+    gap: 1rem;
 
     &__logo {
         @include flexCenter(row);
