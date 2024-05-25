@@ -1,5 +1,13 @@
 @import './mixins';
 
+.welcome {
+    @include flexCenter(column);
+    height: 100vh;
+
+}
+
+
+
 .ContinueWith {
     margin-top: 2rem;
     margin-bottom: 2rem;
