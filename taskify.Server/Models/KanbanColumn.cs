@@ -18,6 +18,6 @@ public partial class KanbanColumn
     public string Name { get; set; } = null!;
 
     [ForeignKey("KanbanId")]
-    [InverseProperty("Columns")]
+    [InverseProperty("KanbanColumns")]
     public virtual Kanban Kanban { get; set; } = null!;
 }
