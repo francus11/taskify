@@ -14,6 +14,6 @@ public partial class UserType
     [StringLength(50)]
     public string? Type { get; set; }
 
-    [InverseProperty("TypeNavigation")]
+    [InverseProperty("UserType")]
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

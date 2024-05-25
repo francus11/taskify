@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace taskify.Server
 {
     public class Program
@@ -6,6 +8,8 @@ namespace taskify.Server
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<DbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
             // Add services to the container.
 

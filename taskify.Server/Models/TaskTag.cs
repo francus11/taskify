@@ -18,6 +18,6 @@ public partial class TaskTag
     public string Name { get; set; } = null!;
 
     [ForeignKey("ProjectId")]
-    [InverseProperty("Tags")]
+    [InverseProperty("TaskTags")]
     public virtual Project Project { get; set; } = null!;
 }
