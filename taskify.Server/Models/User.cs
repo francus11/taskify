@@ -27,7 +27,7 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<OrganizationOwner> OrganizationOwners { get; set; } = new List<OrganizationOwner>();
 
-    [InverseProperty("User")]
+    [InverseProperty(nameof(Task.Author))]
     public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
 
     [ForeignKey("Type")]

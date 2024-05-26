@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace taskify.Server.Models;
 
@@ -15,5 +16,8 @@ public partial class Task
 
     [ForeignKey("AuthorId")]
     [InverseProperty("Tasks")]
-    public virtual User User { get; set; } = null!;
+    [JsonIgnore]
+    public virtual User Author { get; set; } = null!;
+
+    public virtual TaskDetails Details { get; set; }
 }
