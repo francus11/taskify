@@ -72,4 +72,12 @@ public partial class Context : DbContext
         => optionsBuilder.UseSqlServer("Server=taskify.database.windows.net;Database=taskify;User ID=user5;Password=TwojeHaslo123;");
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Task>()
+            .HasOne(a => a.Details)
+            .WithOne()
+            .HasForeignKey<TaskDetails>(b => b.TaskId);
+    }
 }

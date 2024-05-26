@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace taskify.Server.Models;
 
@@ -19,5 +20,6 @@ public partial class TaskTag
 
     [ForeignKey("ProjectId")]
     [InverseProperty("TaskTags")]
+    [JsonIgnore]
     public virtual Project Project { get; set; } = null!;
 }

@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace taskify.Server.Models;
 
-[Keyless]
+
 [Table("Details", Schema = "Task")]
 public partial class TaskDetails
 {
+    [Key]
     [Column("task_id")]
     public int TaskId { get; set; }
 
@@ -37,6 +38,4 @@ public partial class TaskDetails
     [ForeignKey("TagId")]
     public virtual TaskTag? TaskTag { get; set; }
 
-    [ForeignKey("TaskId")]
-    public virtual Task Task { get; set; } = null!;
 }
