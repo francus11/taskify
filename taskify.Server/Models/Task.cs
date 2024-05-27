@@ -20,4 +20,7 @@ public partial class Task
     public virtual User Author { get; set; } = null!;
 
     public virtual TaskDetails Details { get; set; }
+
+    [JsonIgnore]
+    public virtual ICollection<KanbanColumn> Columns { get; set; } = new List<KanbanColumn>();
 }

@@ -20,7 +20,7 @@ public partial class Kanban
     public string KanbanName { get; set; } = null!;
 
     [InverseProperty("Kanban")]
-    public virtual ICollection<KanbanColumn> KanbanColumns { get; set; } = new List<KanbanColumn>();
+    public virtual ICollection<KanbanColumn> Columns { get; set; } = new List<KanbanColumn>();
 
     [ForeignKey("TeamId")]
     [InverseProperty("Kanbans")]
