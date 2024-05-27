@@ -20,6 +20,13 @@ body {
   color: #030047;
 }
 
+.pageHeader {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #030047;
+  padding: 2rem;
+}
+
 .subtext {
   text-decoration: none;
   font-size: 1.5rem;

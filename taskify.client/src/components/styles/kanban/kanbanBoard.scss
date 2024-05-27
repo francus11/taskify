@@ -1,0 +1,24 @@
+.kanban {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+   
+    &__section {
+        width: 25rem;
+        margin-left: 1rem;
+
+
+        &__title {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        &__content {
+            margin-top: 1rem;
+            
+        }
+    } 
+}

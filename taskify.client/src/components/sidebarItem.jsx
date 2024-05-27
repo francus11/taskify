@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
-import './styles/sidebarItem.css';
+import './styles/sidebar/sidebarItem.css';
 import { BiChevronDown } from 'react-icons/bi';
 
 export default function SidebarItem({ item }) {

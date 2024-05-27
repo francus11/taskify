@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from './Layout';
 import './styles/global.css';
 
-import './styles/home.css';
+import './styles/projects.css';
 
 import {Link} from "react-router-dom";
 
@@ -13,7 +13,7 @@ import Menu from '../components/sidebarMenu';
 
 
 
-class Login extends React.Component {
+class Project extends React.Component {
     render() {
         return (
             <Layout>
@@ -22,7 +22,7 @@ class Login extends React.Component {
                     <Menu />
                     <div className='content'>
                         <div className='content__header'>
-                            <h2 className='pageHeader'>Home</h2>
+                            <h2 className='pageHeader'>Projects</h2>
                         
                         </div>
 
@@ -35,4 +35,4 @@ class Login extends React.Component {
         );
     }
 }
-export default Login;
+export default Project;

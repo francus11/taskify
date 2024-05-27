@@ -11,7 +11,7 @@ import Facebook from '../components/facebookButton';
 
 import {Link} from "react-router-dom";
 
-class Login extends React.Component {
+class Signup extends React.Component {
     render() {
         return (
             <Layout>
@@ -44,4 +44,4 @@ class Login extends React.Component {
         );
     }
 }
-export default Login;
+export default Signup;

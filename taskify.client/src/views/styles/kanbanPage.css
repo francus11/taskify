@@ -1,0 +1,11 @@
+main {
+  display: flex;
+}
+main .Kanban {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .Kanban__header {
+  padding: 2rem;
+}/*# sourceMappingURL=kanbanPage.css.map */

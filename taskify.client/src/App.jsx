@@ -7,6 +7,8 @@ import Register from "./views/Signup";
 import Register2 from "./views/Signup2";
 import Login from "./views/Login";
 import Home from "./views/Home";
+import Project from "./views/Project";
+import Kanban from "./views/KanbanPage";
 
 function App() {
   return (
@@ -16,7 +18,10 @@ function App() {
         <Route path="/reg" element={<Register />} />
         <Route path="/reg2" element={<Register2 />} />
         <Route path="/log" element={<Login />} />
+
         <Route path="/home" element={<Home />} />
+        <Route path="/proj" element={<Project />} />
+        <Route path="/kanban" element={<Kanban />} />
       </Routes>
     </Router>
   );

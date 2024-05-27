@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/sidebarMenu.css';
+import './styles/sidebar/sidebarMenu.css';
 
 import SidebarItem from './sidebarItem';
 
