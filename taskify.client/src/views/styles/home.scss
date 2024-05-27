@@ -1,6 +1,11 @@
 @import './mixins';
 @import './variables';
 
-.home {
+main {
+    display: flex;
+    flex-direction: row;
+
+    height: 100vh;
+
 
 }

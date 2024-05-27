@@ -1,1 +1,5 @@
-/*# sourceMappingURL=home.css.map */
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}/*# sourceMappingURL=home.css.map */
