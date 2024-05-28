@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './styles/kanban/kanbanTask.scss';
-import image from '../images/image.jpg';
+import image from '../images/kanban.jpg';
 
 const KanbanTask = (props) => {
     return (
