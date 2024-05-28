@@ -69,7 +69,15 @@ const KanbanBoard = () => {
                                                                 opacity: snapshot.isDragging ? '0.5' : '1'
                                                             }}
                                                         >
-                                                            <KanbanTask>{task.title}</KanbanTask>
+                                                            {/* <KanbanTask>{task.title}</KanbanTask> */}
+                                                            {/* <KanbanTask title="Taki projekt dla KFC">
+                                                                Lorem ipsum KFC lepsze od McDonald. Bla bla bla, żeby było co pokazać. Kiedy benzyna po 5,19 zł/L.
+                                                            </KanbanTask> */}
+                                                            <KanbanTask
+                                                                title={task.title}
+                                                                description={task.description} // Pass the description prop
+                                                            />
+
                                                         </div>
                                                     )}
                                                 </Draggable>

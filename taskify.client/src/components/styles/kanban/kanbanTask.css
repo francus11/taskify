@@ -1,6 +1,54 @@
 .KanbanTask {
-  padding: 2rem;
-  border: 0.1rem solid #66717E;
+  position: relative;
+  padding: 1rem;
+  border: none;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.KanbanTask__icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 7rem;
+}
+.KanbanTask__content {
+  display: flex;
+  flex-direction: column;
+}
+.KanbanTask__content__title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.KanbanTask__content__description {
+  color: #6c757d;
+}
+.KanbanTask__menu {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+.KanbanTask__menu__dots {
+  cursor: pointer;
+}
+.KanbanTask__button {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  background-color: rgba(168, 162, 162, 0.219);
+  color: black;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+.KanbanTask__button:hover {
+  background-color: white;
 }/*# sourceMappingURL=kanbanTask.css.map */
