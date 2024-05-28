@@ -10,6 +10,7 @@ import {Link} from "react-router-dom";
 
 import TopBar from '../components/topBar';
 import Menu from '../components/sidebarMenu';
+import ProjectTile from '../components/projectTile';
 
 
 
@@ -25,6 +26,17 @@ class Project extends React.Component {
                             <h2 className='pageHeader'>Projects</h2>
                         
                         </div>
+                        <div className='content__projects'>
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                            <ProjectTile />
+                        </div>
+                        
 
 
 
