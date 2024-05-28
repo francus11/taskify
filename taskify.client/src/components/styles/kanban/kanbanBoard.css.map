@@ -1,1 +1,1 @@
-{"version":3,"sources":["kanbanBoard.scss","kanbanBoard.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,eAAA;ACCJ;ADEI;EACI,YAAA;EACA,iBAAA;ACAR;ADGQ;EACI,eAAA;EACA,gBAAA;EACA,aAAA;EACA,kBAAA;ACDZ;ADIQ;EACI,gBAAA;ACFZ","file":"kanbanBoard.css"}
+{"version":3,"sources":["kanbanBoard.scss","kanbanBoard.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,eAAA;ACCJ;ADEI;EACI,YAAA;EACA,iBAAA;ACAR;ADGQ;EACI,eAAA;EACA,gBAAA;EACA,aAAA;EACA,kBAAA;ACDZ;ADIQ;EACI,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;ACFZ","file":"kanbanBoard.css"}

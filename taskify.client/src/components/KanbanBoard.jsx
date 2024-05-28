@@ -75,7 +75,7 @@ const KanbanBoard = () => {
                                                             </KanbanTask> */}
                                                             <KanbanTask
                                                                 title={task.title}
-                                                                description={task.description} // Pass the description prop
+                                                                description={task.description}
                                                             />
 
                                                         </div>

@@ -1,21 +1,37 @@
 
 
 import React from 'react';
+
+import { BsThreeDotsVertical } from 'react-icons/bs';
+
+
+import '../views/styles/global.css';
 import './styles/kanban/kanbanTask.scss';
+
 import image from '../images/kanban.jpg';
 
 const KanbanTask = (props) => {
     return (
         <div className="KanbanTask">
-            <img src={image} alt="Icon" className="KanbanTask__icon" />
-            <div className="KanbanTask__content">
-                <div className="KanbanTask__content__title">{props.title}</div>
-                <div className="KanbanTask__content__description">{props.description}</div> {/*TODO Updated to display description */}
+            <div className="KanbanTask__logo">
+                <img src={image} alt="Icon" />
             </div>
-            <div className="KanbanTask__menu">
-                <div className="KanbanTask__menu__dots">⋮</div>
+            
+
+            <div className="KanbanTask__body">
+
+                <div className="KanbanTask__body__header">
+                    <h3 className='header'>{props.title}</h3>
+                    <BsThreeDotsVertical className='icon' />
+                </div>
+                <div className="projectTile__body__content">
+                    <p className='content'>Task Description - mozna opisac kiedy paliwo po 5,19zł/L</p>
+                    {/* {props.description} */}
+                </div>
+                <div className="projectTile__body__footer">
+                    <button className='button'>See</button>
+                </div>
             </div>
-            <button className="KanbanTask__button">See</button>
         </div>
     );
 };

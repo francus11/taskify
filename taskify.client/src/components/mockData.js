@@ -49,7 +49,7 @@ const mockData = [
         tasks: [
             {
                 id: uuidv4(),
-                title: 'DUPA'
+                title: 'Pay for the rent'
             }
         ]
     }
