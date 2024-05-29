@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace taskify.Server.Models;
 
@@ -20,11 +22,10 @@ public partial class Context : DbContext
 
     public virtual DbSet<KanbanColumn> KanbanColumns { get; set; }
 
-    public virtual DbSet<ColumnTask> ColumnTasks { get; set; }
-
     public virtual DbSet<TaskDetails> TaskDetails { get; set; }
 
     public virtual DbSet<Kanban> Kanbans { get; set; }
+    public virtual DbSet<ColumnTask> ColumnTasks { get; set; }
 
     public virtual DbSet<ProjectLeader> ProjectLeaders { get; set; }
 
@@ -79,5 +80,29 @@ public partial class Context : DbContext
             .HasOne(a => a.Details)
             .WithOne()
             .HasForeignKey<TaskDetails>(b => b.TaskId);
+
+        /*modelBuilder.Entity<Column>()
+        .HasMany(kc => kc.Tasks)
+        .WithMany(t => t.KanbanColumns)
+        .UsingEntity(j => j.ToTable("ColumnTask", "Kanban")
+            .HasKey(ct => new { ct.ColumnId, ct.TaskId })
+            .HasOne(ct => ct.KanbanColumn)
+            .WithMany()
+            .HasForeignKey(ct => ct.ColumnId)
+            .OnDelete(DeleteBehavior.Cascade),
+            j => j.HasOne(ct => ct.Task)
+            .WithMany()
+            .HasForeignKey(ct => ct.TaskId)
+            .OnDelete(DeleteBehavior.Cascade)
+        );*/
+
+        modelBuilder.Entity<KanbanColumn>()
+        .HasMany(e => e.Tasks)
+        .WithMany(e => e.Columns)
+        .UsingEntity(
+            "Kanban",
+            typeof(ColumnTask),
+            j => j.HasKey("Id"));
+
     }
 }
