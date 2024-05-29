@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace taskify.Server.Models;
 
@@ -18,6 +19,9 @@ public partial class KanbanColumn
     public string Name { get; set; } = null!;
 
     [ForeignKey("KanbanId")]
-    [InverseProperty("KanbanColumns")]
+    [InverseProperty("Columns")]
+    [JsonIgnore]
     public virtual Kanban Kanban { get; set; } = null!;
+
+    public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
 }
