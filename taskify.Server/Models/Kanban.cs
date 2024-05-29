@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using taskify.Server.Controllers.Kanbans;
 
 namespace taskify.Server.Models;
 
@@ -25,4 +26,27 @@ public partial class Kanban
     [ForeignKey("TeamId")]
     [InverseProperty("Kanbans")]
     public virtual Team Team { get; set; } = null!;
+
+    public Kanban() { }
+
+    public Kanban(KanbanPostRequestBody requestBody)
+    {
+        TeamId = requestBody.TeamId;
+        KanbanName = requestBody.KanbanName;
+        Columns.Add(new KanbanColumn
+        {
+            Name = "To do",
+            Kanban = this
+        });
+        Columns.Add(new KanbanColumn
+        {
+            Name = "In progress",
+            Kanban = this
+        });
+        Columns.Add(new KanbanColumn
+        {
+            Name = "Done",
+            Kanban = this
+        });
+    }
 }

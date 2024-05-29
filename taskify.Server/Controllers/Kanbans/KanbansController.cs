@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using taskify.Server.Models;
 
-namespace taskify.Server.Controllers
+namespace taskify.Server.Controllers.Kanbans
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -79,8 +79,9 @@ namespace taskify.Server.Controllers
         // POST: api/Kanbans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Kanban>> PostKanban(Kanban kanban)
+        public async Task<ActionResult<Kanban>> PostKanban(KanbanPostRequestBody requestBody)
         {
+            Kanban kanban = new Kanban(requestBody);
             _context.Kanbans.Add(kanban);
             await _context.SaveChangesAsync();
 
