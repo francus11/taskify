@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "antd": "^5.17.3",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.9",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
