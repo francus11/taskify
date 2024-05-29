@@ -1,0 +1,43 @@
+@import '../../views/styles/variables.scss';
+
+.modal {
+    width: clamp(50%, 70rem, 90%);
+    height: min(50%, 30rem);
+
+    margin: auto;
+    padding: 0 2rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    background-color: $backgroungColor;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    .buttonaddtask {
+        margin-top: 1rem;
+        width: 30rem;
+        height: 5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+        padding: 1rem;
+        background-color: $yellowFacebookButton;
+        border: none;
+        border-radius: 1rem;
+
+        cursor: pointer;
+
+        &:active{
+            transform: scale(0.98);
+        }
+        &:hover{
+            transform: scale(0.98);
+        }
+
+    }
+
+}

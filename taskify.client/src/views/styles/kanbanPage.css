@@ -8,4 +8,10 @@ main .Kanban {
 }
 main .Kanban__header {
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .Kanban__header .icon {
+  font-size: 4rem;
 }/*# sourceMappingURL=kanbanPage.css.map */

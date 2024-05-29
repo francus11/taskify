@@ -12,6 +12,14 @@ main {
 
         &__header {
             padding: 2rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon {
+                font-size: 4rem;
+            }
         }
     }
 }
