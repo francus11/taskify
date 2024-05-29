@@ -35,7 +35,10 @@ namespace taskify.Server.Controllers.Kanbans
         [HttpGet("{id}")]
         public async Task<ActionResult<Kanban>> GetKanban(int id)
         {
-            var kanban = await _context.Kanbans.FindAsync(id);
+            var kanban = await _context.Kanbans
+                .Include(k => k.Columns) // Zaciągnij dane do pola Columns
+                .ThenInclude(k => k.Tasks)
+                .FirstOrDefaultAsync(k => k.Id == id);
 
             if (kanban == null)
             {
