@@ -1,12 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace taskify.Server.Models;
 
-[Keyless]
 [Table("ColumnTask", Schema = "Kanban")]
 public partial class ColumnTask
 {
+    [Key]
+    [Column("id")]
+    public int Id { get; set; }
+
     [Column("column_id")]
     public int ColumnId { get; set; }
 
@@ -14,7 +18,7 @@ public partial class ColumnTask
     public int TaskId { get; set; }
 
     [ForeignKey("ColumnId")]
-    public virtual KanbanColumn KanbanColumn { get; set; } = null!;
+    public virtual KanbanColumn Column { get; set; } = null!;
 
     [ForeignKey("TaskId")]
     public virtual Task Task { get; set; } = null!;
