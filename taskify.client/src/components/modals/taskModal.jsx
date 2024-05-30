@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
 import Backdrop from './backdrop/backdrop';
-import StyledInput from '../styledInput';
 
-import './projectModal.css';
+import './taskModal.css';
+import '../styles/styledinput.css';
 
 import axios from 'axios';
 
@@ -33,17 +33,16 @@ const Modal = ({ handleClose }) => {
     const [taskName, setTaskName] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
 
-    const handleInputChange1 = (event) => {
+    const taskNameChange = (event) => {
         setTaskName(event.target.value);
     };
 
-    const handleInputChange2 = (event) => {
+    const taskDescriptionChange = (event) => {
         setTaskDescription(event.target.value);
     };
 
     const handleAddTask = () => {
-        console.log('Task Name:', taskName);
-        console.log('Task Description:', taskDescription);
+        alert(`${taskName} ${taskDescription}`);
         handleClose();
     };
 
@@ -57,18 +56,15 @@ const Modal = ({ handleClose }) => {
                 animate='visible'
                 exit='exit'
             >
-                <input 
-                    type="text" 
-                    value={taskName} 
-                    onChange={handleInputChange1} 
-                    placeholder="Task Name"
-                />
-                <input 
-                    type="text" 
-                    value={taskDescription} 
-                    onChange={handleInputChange2} 
-                    placeholder="Task Description"
-                />
+                 <div className='styledInputContainer'>
+                    <p className='styledInputText'>Task name</p>
+                    <input type='text' className='styledInput' value={taskName} onChange={taskNameChange} placeholder='Task name' />
+                </div>
+                <div className='styledInputContainer'>
+                    <p className='styledInputText'>Task description</p>
+                    <input type='text' className='styledInput' value={taskDescription} onChange={taskDescriptionChange} placeholder='Task Description' />
+                </div>
+
                 <button className='buttonaddtask' onClick={handleAddTask}>
                     Add Task
                 </button>

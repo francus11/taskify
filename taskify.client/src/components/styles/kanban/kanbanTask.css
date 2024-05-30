@@ -76,4 +76,27 @@
 .KanbanTask__footer button:hover {
   background-color: #D8D8D8;
   cursor: pointer;
+}
+
+.PopperMenu__container {
+  background-color: #F9F9F9;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.PopperMenu__container__menu li {
+  list-style-type: none;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.PopperMenu__container__menu li:hover {
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+.PopperMenu__container__menu__delete {
+  background-color: #E7625F;
+  color: white;
 }/*# sourceMappingURL=kanbanTask.css.map */

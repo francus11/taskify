@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import { v4 as uuidv4 } from 'uuid';
-=======
-import { v4 as uuidv4 } from 'uuid'
->>>>>>> front
 
 const mockData = [
     {
         id: uuidv4(),
-<<<<<<< HEAD
         title: "IN PROGRESS",
-=======
-        title: ' 📃 To do',
->>>>>>> front
         tasks: [
             {
                 id: uuidv4(),
@@ -29,11 +21,7 @@ const mockData = [
     },
     {
         id: uuidv4(),
-<<<<<<< HEAD
         title: "COMPLETED",
-=======
-        title: ' ✏️ In progress',
->>>>>>> front
         tasks: [
             {
                 id: uuidv4(),
@@ -47,18 +35,13 @@ const mockData = [
     },
     {
         id: uuidv4(),
-<<<<<<< HEAD
         title: "IN REVIEW",
-=======
-        title: ' ✔️ Completed',
->>>>>>> front
         tasks: [
             {
                 id: uuidv4(),
                 title: 'Learn HTML'
             }
         ]
-<<<<<<< HEAD
     },
     {
         id: uuidv4(),
@@ -73,9 +56,3 @@ const mockData = [
 ];
 
 export default mockData;
-=======
-    }
-]
-
-export default mockData
->>>>>>> front

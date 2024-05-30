@@ -113,3 +113,40 @@
 
 }
 }
+
+.PopperMenu__container {
+    background-color: $backgroungColor;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: none;
+    border-radius: 0.5rem;
+
+    padding: 0.5rem;
+    font-size: 1.5rem;
+
+
+    &__menu {
+        
+        
+
+
+
+        li {
+            list-style-type: none;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+
+            &:hover {
+                background-color: #D8D8D8;
+                cursor: pointer;
+            }
+        }
+
+        &__delete {
+            background-color: #E7625F;
+            color: white;
+        }
+
+
+    }
+}

@@ -17,9 +17,36 @@ main {
             justify-content: space-between;
             align-items: center;
 
-            .icon {
-                font-size: 4rem;
+            button {
+                border: none;
+            }
+
+            .buttonAddTask {
+                width: 12rem;
+                height: 4rem;
+                background-color: $yellowGrade;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                cursor: pointer;
+                border: none;
+                border-radius: 1rem;
+
+                .icon {
+                    font-size: 3rem;
+                }
+
+                &:hover {
+                    transform: scale(0.97);
+                }
             }
         }
     }
+
+    
 }
