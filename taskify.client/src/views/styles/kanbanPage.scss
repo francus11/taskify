@@ -1,0 +1,52 @@
+@import './mixins';
+@import './variables';
+
+main {
+    display: flex;
+
+    .Kanban {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+
+        &__header {
+            padding: 2rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                border: none;
+            }
+
+            .buttonAddTask {
+                width: 12rem;
+                height: 4rem;
+                background-color: $yellowGrade;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                cursor: pointer;
+                border: none;
+                border-radius: 1rem;
+
+                .icon {
+                    font-size: 3rem;
+                }
+
+                &:hover {
+                    transform: scale(0.97);
+                }
+            }
+        }
+    }
+
+    
+}

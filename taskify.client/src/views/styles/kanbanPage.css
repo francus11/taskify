@@ -1,0 +1,37 @@
+main {
+  display: flex;
+}
+main .Kanban {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .Kanban__header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .Kanban__header button {
+  border: none;
+}
+main .Kanban__header .buttonAddTask {
+  width: 12rem;
+  height: 4rem;
+  background-color: #FFCC3E;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+}
+main .Kanban__header .buttonAddTask .icon {
+  font-size: 3rem;
+}
+main .Kanban__header .buttonAddTask:hover {
+  transform: scale(0.97);
+}/*# sourceMappingURL=kanbanPage.css.map */

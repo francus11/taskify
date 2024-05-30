@@ -1,0 +1,49 @@
+html {
+  font-size: 10px;
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+.header {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #030047;
+}
+
+.pageHeader {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #030047;
+  padding: 2rem;
+}
+
+.subtext {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #030047;
+}
+.subtext__span {
+  font-weight: bold;
+}
+
+.subtext__forgot {
+  text-decoration: none;
+  text-align: right;
+  margin-right: 2rem;
+  width: 30rem;
+  font-size: 1.5rem;
+  color: #030047;
+}
+.subtext__forgot__span {
+  font-weight: bold;
+}/*# sourceMappingURL=global.css.map */

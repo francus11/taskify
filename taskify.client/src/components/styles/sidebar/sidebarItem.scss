@@ -1,0 +1,52 @@
+@import '../../views/styles/mixins';
+@import '../../views/styles/variables';
+
+.sidebar__item {
+    display: block;
+
+    font-size: 1.5rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+
+    // background-color: red;
+    border-radius: 0.5rem;
+
+    transition: background-color .15s;
+    
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+
+        &__icon {
+                font-size: 2rem;
+                cursor: pointer;
+                transition: transform .3s;
+            }
+
+    }
+
+    &__content {
+        padding-top: .25rem;
+        height: 0;
+        overflow: hidden;
+    }
+
+    &.open > &__content {
+        height: auto;
+
+    }
+
+    
+    &.open > &__title__icon {
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        background-color: $purpleGrade;
+        color: white;
+    }
+}

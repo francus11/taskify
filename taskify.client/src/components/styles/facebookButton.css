@@ -1,0 +1,25 @@
+.facebookButton {
+  width: 30rem;
+  height: 5rem;
+  background-color: #FFDC80;
+  color: #030047;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+.facebookButton .facebookIcon {
+  font-size: 2.4rem;
+}
+.facebookButton:active {
+  transform: scale(0.98);
+}
+.facebookButton:hover {
+  transform: scale(0.98);
+}/*# sourceMappingURL=facebookButton.css.map */

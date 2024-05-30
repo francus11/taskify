@@ -1,49 +1,30 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Welcome from "./views/Welcome";
+import Register from "./views/Signup";
+import Register2 from "./views/Signup2";
+import Login from "./views/Login";
+import Home from "./views/Home";
+import Project from "./views/Project";
+import Kanban from "./views/KanbanPage";
 
 function App() {
-    const [forecasts, setForecasts] = useState();
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/reg" element={<Register />} />
+        <Route path="/reg2" element={<Register2 />} />
+        <Route path="/log" element={<Login />} />
 
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tabelLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
-
-    return (
-        <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
-    );
-    
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        setForecasts(data);
-    }
+        <Route path="/home" element={<Home />} />
+        <Route path="/proj" element={<Project />} />
+        <Route path="/kanban" element={<Kanban />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

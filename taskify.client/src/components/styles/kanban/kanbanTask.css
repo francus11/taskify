@@ -1,0 +1,107 @@
+.KanbanTask {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: 25rem;
+  height: 15rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  border-radius: 1rem;
+  display: flex;
+}
+.KanbanTask__logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.KanbanTask__logo img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+.KanbanTask__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.KanbanTask__body__header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.KanbanTask__body__header h3 {
+  font-size: 1.5rem;
+}
+.KanbanTask__body__header .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.KanbanTask__body__header .icon:hover {
+  cursor: pointer;
+}
+.KanbanTask__body__content {
+  flex-grow: 1;
+  padding-left: 0.5rem;
+  padding-right: 2rem;
+  overflow: hidden;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.KanbanTask__body__content p {
+  font-size: 1.5rem;
+}
+.KanbanTask__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.KanbanTask__footer p {
+  font-size: 1.3rem;
+}
+.KanbanTask__footer__dueto .dueto {
+  font-weight: bold;
+  color: #030047;
+}
+.KanbanTask__footer button {
+  width: 4.5rem;
+  height: 3rem;
+  background-color: #E8E8E8;
+  border: none;
+  border-radius: 1rem;
+  align-self: flex-end;
+}
+.KanbanTask__footer button:hover {
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+
+.PopperMenu__container {
+  background-color: #F9F9F9;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.PopperMenu__container__menu li {
+  list-style-type: none;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.PopperMenu__container__menu li:hover {
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+.PopperMenu__container__menu__delete {
+  background-color: #E7625F;
+  color: white;
+}/*# sourceMappingURL=kanbanTask.css.map */

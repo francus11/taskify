@@ -1,0 +1,14 @@
+.styledInputContainer .styledInputText {
+  text-align: left;
+  font-size: 1.5rem;
+}
+.styledInputContainer .styledInput {
+  width: 30rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  color: black;
+  padding: 1rem;
+  background-color: #E1E5F4;
+  border: 2px solid #D8DADC;
+  border-radius: 1rem;
+}/*# sourceMappingURL=styledinput.css.map */
