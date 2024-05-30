@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace taskify.Server.Models;
 
@@ -28,6 +29,7 @@ public partial class Project
     public virtual Organization Organization { get; set; } = null!;
 
     [InverseProperty("Project")]
+    [JsonIgnore]
     public virtual ICollection<TaskTag> TaskTags { get; set; } = new List<TaskTag>();
 
     [InverseProperty("Project")]
