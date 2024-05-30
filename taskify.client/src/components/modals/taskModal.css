@@ -30,4 +30,17 @@
 }
 .modal .buttonaddtask:hover {
   transform: scale(0.98);
+}
+
+.previevmodal {
+  width: 30rem;
+}
+.previevmodal__header {
+  padding-bottom: 1rem;
+}
+.previevmodal__description__header {
+  font-size: 2rem;
+}
+.previevmodal__description__text {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=taskModal.css.map */

@@ -86,7 +86,7 @@
 
     &__footer {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding-right: 2rem;
         padding-bottom: 1rem;
         
@@ -94,7 +94,22 @@
         padding-top: 0.5rem;
 
         p {
-            font-size: 1rem;
+            font-size: 1.3rem;
+        }
+
+        &__dueto {
+
+
+            .dueto {
+                font-weight: bold;
+                color: $purpleGrade;
+
+            }
+
+            .date {
+
+
+            }
         }
 
         button {
@@ -103,6 +118,8 @@
             background-color: #E8E8E8;
             border: none;
             border-radius: 1rem;
+
+            align-self: flex-end;
 
             &:hover {
                 background-color: #D8D8D8;

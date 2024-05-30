@@ -57,14 +57,18 @@
 }
 .KanbanTask__footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 2rem;
   padding-bottom: 1rem;
   align-items: center;
   padding-top: 0.5rem;
 }
 .KanbanTask__footer p {
-  font-size: 1rem;
+  font-size: 1.3rem;
+}
+.KanbanTask__footer__dueto .dueto {
+  font-weight: bold;
+  color: #030047;
 }
 .KanbanTask__footer button {
   width: 4.5rem;
@@ -72,6 +76,7 @@
   background-color: #E8E8E8;
   border: none;
   border-radius: 1rem;
+  align-self: flex-end;
 }
 .KanbanTask__footer button:hover {
   background-color: #D8D8D8;

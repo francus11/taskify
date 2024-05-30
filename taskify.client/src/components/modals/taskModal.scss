@@ -41,3 +41,35 @@
     }
 
 }
+
+.previevmodal {
+    width: 30rem;
+
+    &__header {
+        padding-bottom: 1rem;
+
+
+        .header {
+            
+        }
+
+
+    }
+
+    &__description {
+        
+
+        &__header {
+            font-size: 2rem;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+
+        }
+
+
+    }
+
+
+}

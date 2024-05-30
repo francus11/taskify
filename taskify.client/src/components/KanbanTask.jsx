@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPopper } from '@popperjs/core';
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import { motion, AnimatePresence } from 'framer-motion';
+import Modal from '../components/modals/previevTaskModal';
+
+
 import '../views/styles/global.css';
 import './styles/kanban/kanbanTask.scss';
 import image from '../images/kanban.jpg';
@@ -10,6 +14,10 @@ const KanbanTask = (props) => {
     const [popperElement, setPopperElement] = useState(null);
     const [showMenu, setShowMenu] = useState(false);
     const popperInstanceRef = useRef(null);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const close = () => setIsOpen(false);
+    const open = () => setIsOpen(true);
 
     useEffect(() => {
         if (referenceElement && popperElement) {
@@ -61,13 +69,24 @@ const KanbanTask = (props) => {
                     <h3 className="header">{props.title}</h3>
                     <BsThreeDotsVertical className="icon" onClick={handleIconClick} />
                 </div>
-                <div className="projectTile__body__content">
+                <div className="KanbanTask__body__content">
                     <p className="content">Task_ Description - mozna opisac kiedy paliwo po 5,19zł/L</p>
                 </div>
-                <div className="projectTile__body__footer">
-                    <button className="button">See</button>
+                <div className="KanbanTask__footer">
+                    <div className="KanbanTask__footer__dueto">
+                        <p className="dueto">Due to</p>
+                        <p className="date">12.12.2021</p>
+                    </div>
+                    <motion.button onClick={() => (isOpen ? close() : open())} className='button'>See</motion.button>
                 </div>
             </div>
+
+            <AnimatePresence initial={false} onExitComplete={() => null}>
+                        {isOpen && <Modal isOpen={isOpen} handleClose={close} />}
+            </AnimatePresence>
+
+
+
             {showMenu && (
                 <div className="PopperMenu__container" ref={setPopperElement} style={popperInstanceRef.current?.state.styles.popper} {...popperInstanceRef.current?.state.attributes.popper}>
                     <ul className='PopperMenu__container__menu'>
