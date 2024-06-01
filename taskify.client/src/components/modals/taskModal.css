@@ -69,4 +69,16 @@
 }
 .editmodal__description__text {
   font-size: 1.5rem;
+}
+.editmodal input {
+  width: 30rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: black;
+  padding: 0.5rem;
+  background-color: #E1E5F4;
+  border: 2px solid #D8DADC;
+  border-radius: 1rem;
+  text-align: left;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=taskModal.css.map */

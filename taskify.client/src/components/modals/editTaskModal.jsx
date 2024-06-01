@@ -63,7 +63,8 @@ const EditTaskModal = ({ handleClose, task, updateTask }) => {
                         <h2 className='header'>{taskName}</h2>
                         <img src={EditIcon} alt="Edit Icon" width={30} height={30} onClick={() => setIsEditingName(!isEditingName)} />
                         
-                        {isEditingName && (
+                    </div>
+                    {isEditingName && (
                             <input
                                 type="text"
                                 value={taskName}
@@ -71,14 +72,14 @@ const EditTaskModal = ({ handleClose, task, updateTask }) => {
                                 placeholder="Enter new task name"
                             />
                         )}
-                    </div>
+
                     <div className="editmodal__description">
                         <div className="editmodal__description__header">
                             <h3>Description</h3>
                             <img src={EditIcon} alt="Edit Icon" width={20} height={20} onClick={() => setIsEditingDescription(!isEditingDescription)} />
                         </div>
                         {isEditingDescription ? (
-                            <textarea
+                            <input
                                 value={taskDescription}
                                 onChange={(e) => setTaskDescription(e.target.value)}
                                 placeholder="Enter new task description"
