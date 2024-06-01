@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Modal from '../components/modals/previevTaskModal';
-import EditModal from '../components/modals/editTaskModal';
+import EditModal from '../components/modals/editTaskModal';  
 
 import '../views/styles/global.css';
 import './styles/kanban/kanbanTask.css';
@@ -41,7 +41,7 @@ const KanbanTask = ({ task, updateTask }) => {
     }, [referenceElement, popperElement]);
 
     const handleIconClick = () => {
-        setShowMenu((prevShowMenu) => !prevShowMenu);
+        setShowMenu(prev => !prev);
     };
 
     useEffect(() => {
@@ -85,13 +85,13 @@ const KanbanTask = ({ task, updateTask }) => {
                         <p className="dueto">Due to</p>
                         <p className="date">{task.date}</p>
                     </div>
-                    <motion.button onClick={() => (isOpen ? close() : open())} className='button'>See</motion.button>
+                    <motion.button onClick={open} className='button'>See</motion.button>
                 </div>
             </div>
 
             <AnimatePresence initial={false} onExitComplete={() => null}>
-                {isOpen && <Modal isOpen={isOpen} handleClose={close} />}
-                {isEditOpen && <EditModal isEditOpen={isEditOpen} handleClose={editClose} task={task} updateTask={updateTask} />}
+                {isOpen && <Modal handleClose={close} task={task} />}
+                {isEditOpen && <EditModal handleClose={editClose} task={task} updateTask={updateTask} />}
             </AnimatePresence>
 
             {showMenu && (

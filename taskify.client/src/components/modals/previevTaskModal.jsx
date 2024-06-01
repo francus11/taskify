@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React from 'react';
 
 import Backdrop from './backdrop/backdrop';
 
 import './taskModal.css';
-
-import axios from 'axios';
 
 const dropIn = {
     hidden: {
@@ -28,22 +26,7 @@ const dropIn = {
     }
 };
 
-const Modal = ({ handleClose }) => {
-    const [taskName, setTaskName] = useState('');
-    const [taskDescription, setTaskDescription] = useState('');
-
-    const taskNameChange = (event) => {
-        setTaskName(event.target.value);
-    };
-
-    const taskDescriptionChange = (event) => {
-        setTaskDescription(event.target.value);
-    };
-
-    const handleAddTask = () => {
-        handleClose();
-    };
-
+const Modal = ({ handleClose, task }) => {
     return (
         <Backdrop onClick={handleClose}>
             <motion.div 
@@ -56,12 +39,12 @@ const Modal = ({ handleClose }) => {
             >
                 <div className="previevmodal">
                     <div className='previevmodal__header'>
-                        <h2 className='header'>Task Name</h2>
+                        <h2 className='header'>{task.title}</h2>
                     </div>
                     <div className="previevmodal__description">
                         <h3 className="previevmodal__description__header">Description</h3>
                         <p className="previevmodal__description__text">
-                            Jakis teskt co moze byc dla opisu taska czy to np kiedy paliwo w Polsce po 5.19zł/L czy cos innego lelelle
+                            {task.description}
                         </p>
                     </div>
                 </div>
@@ -70,17 +53,12 @@ const Modal = ({ handleClose }) => {
                     <div className="previevmodal__description">
                         <h3 className="previevmodal__description__header">Date</h3>
                         <p className="previevmodal__description__text">
-                            12.12.2021
+                            {task.date}
                         </p>
                     </div>
                 </div>
 
-
-
-
-
-
-                <button className='buttonaddtask' onClick={handleAddTask}>
+                <button className='buttonaddtask' onClick={handleClose}>
                     Close Previev
                 </button>
             </motion.div>
