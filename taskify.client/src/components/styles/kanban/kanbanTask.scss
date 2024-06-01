@@ -152,6 +152,7 @@
             padding: 0.5rem;
             border: none;
             border-radius: 0.5rem;
+            
 
             &:hover {
                 background-color: #D8D8D8;
@@ -159,9 +160,15 @@
             }
         }
 
-        &__delete {
-            background-color: #E7625F;
-            color: white;
+        .motionbutton {
+            border: none;
+            border-radius: 0.5rem;
+            // background-color: #D8D8D8;
+
+            &:hover {
+                background-color: #D8D8D8;
+                cursor: pointer;
+            }
         }
 
 

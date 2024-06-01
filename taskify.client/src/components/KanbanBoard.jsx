@@ -33,6 +33,16 @@ const KanbanBoard = () => {
         }
     };
 
+    const updateTask = (updatedTask) => {
+        const newData = data.map(section => {
+            const updatedTasks = section.tasks.map(task =>
+                task.id === updatedTask.id ? updatedTask : task
+            );
+            return { ...section, tasks: updatedTasks };
+        });
+        setData(newData);
+    };
+
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <div className="kanban">
@@ -69,15 +79,10 @@ const KanbanBoard = () => {
                                                                 opacity: snapshot.isDragging ? '0.5' : '1'
                                                             }}
                                                         >
-                                                            {/* <KanbanTask>{task.title}</KanbanTask> */}
-                                                            {/* <KanbanTask title="Taki projekt dla KFC">
-                                                                Lorem ipsum KFC lepsze od McDonald. Bla bla bla, żeby było co pokazać. Kiedy benzyna po 5,19 zł/L.
-                                                            </KanbanTask> */}
                                                             <KanbanTask
-                                                                title={task.title}
-                                                                description={task.description}
+                                                                task={task}
+                                                                updateTask={updateTask}
                                                             />
-
                                                         </div>
                                                     )}
                                                 </Draggable>

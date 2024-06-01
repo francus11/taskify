@@ -56,7 +56,7 @@ const Modal = ({ handleClose }) => {
             >
                 <div className="previevmodal">
                     <div className='previevmodal__header'>
-                        <h2 className='header'>Project Name</h2>
+                        <h2 className='header'>Task Name</h2>
                     </div>
                     <div className="previevmodal__description">
                         <h3 className="previevmodal__description__header">Description</h3>

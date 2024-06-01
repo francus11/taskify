@@ -37,10 +37,36 @@
 }
 .previevmodal__header {
   padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .previevmodal__description__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 2rem;
 }
 .previevmodal__description__text {
+  font-size: 1.5rem;
+}
+
+.editmodal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.editmodal__description {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.editmodal__description__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+.editmodal__description__text {
   font-size: 1.5rem;
 }/*# sourceMappingURL=taskModal.css.map */

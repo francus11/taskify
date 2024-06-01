@@ -101,7 +101,11 @@
   background-color: #D8D8D8;
   cursor: pointer;
 }
-.PopperMenu__container__menu__delete {
-  background-color: #E7625F;
-  color: white;
+.PopperMenu__container__menu .motionbutton {
+  border: none;
+  border-radius: 0.5rem;
+}
+.PopperMenu__container__menu .motionbutton:hover {
+  background-color: #D8D8D8;
+  cursor: pointer;
 }/*# sourceMappingURL=kanbanTask.css.map */

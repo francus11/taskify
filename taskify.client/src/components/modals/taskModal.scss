@@ -47,6 +47,9 @@
 
     &__header {
         padding-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
 
         .header {
@@ -60,6 +63,10 @@
         
 
         &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
             font-size: 2rem;
         }
 
@@ -70,6 +77,39 @@
 
 
     }
+
+
+}
+
+.editmodal {
+
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__description {
+
+        margin-top: 1rem;
+        font-size: 1.5rem;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            font-size: 2rem;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+        }
+    }
+
+
 
 
 }
