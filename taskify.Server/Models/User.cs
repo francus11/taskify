@@ -33,6 +33,7 @@ public partial class User
     [ForeignKey("Type")]
     [InverseProperty("Users")]
     public virtual UserType? UserType { get; set; }
+    public virtual UserData UserData { get; set; }
 
     public virtual ICollection<UserPassword> Passwords { get; set; } = new List<UserPassword>();
 

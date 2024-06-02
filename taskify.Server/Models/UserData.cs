@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace taskify.Server.Models;
 
-[Keyless]
 [Table("UserData", Schema = "User")]
 [Index("UserId", IsUnique = true)]
 public partial class UserData
@@ -28,6 +27,4 @@ public partial class UserData
     [StringLength(150)]
     public string? UserPhoto { get; set; }
 
-    [ForeignKey("UserId")]
-    public virtual User User { get; set; } = null!;
 }

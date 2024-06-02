@@ -117,5 +117,16 @@ public partial class Context : DbContext
             .HasMany(u => u.RefreshTokens)
             .WithOne()
             .HasForeignKey(t => t.UserId);
+
+
+        modelBuilder.Entity<UserData>()
+            .HasKey(e => e.UserId);
+
+        modelBuilder.Entity<User>()
+        .HasOne(u => u.UserData)
+        .WithOne()
+        .HasForeignKey<UserData>(ud => ud.UserId);
+
+
     }
 }
