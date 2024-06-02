@@ -68,6 +68,7 @@ public partial class Context : DbContext
     public virtual DbSet<UserPosition> UserPositions { get; set; }
 
     public virtual DbSet<UserType> UserTypes { get; set; }
+    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=taskify.database.windows.net;Database=taskify;User ID=user5;Password=TwojeHaslo123;");
@@ -103,6 +104,29 @@ public partial class Context : DbContext
             "Kanban",
             typeof(ColumnTask),
             j => j.HasKey("Id"));
+
+        modelBuilder.Entity<UserPassword>()
+            .HasKey(e => new { e.UserId, e.Password});
+
+        modelBuilder.Entity<User>()
+            .HasMany(u=> u.Passwords)
+            .WithOne()
+            .HasForeignKey(p => p.UserId);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.RefreshTokens)
+            .WithOne()
+            .HasForeignKey(t => t.UserId);
+
+
+        modelBuilder.Entity<UserData>()
+            .HasKey(e => e.UserId);
+
+        modelBuilder.Entity<User>()
+        .HasOne(u => u.UserData)
+        .WithOne()
+        .HasForeignKey<UserData>(ud => ud.UserId);
+
 
     }
 }

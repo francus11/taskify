@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,9 +24,15 @@ namespace taskify.Server.Controllers.Kanbans
         }
 
         // GET: api/Kanbans
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Kanban>>> GetKanbans()
         {
+            var authorizationHeader = this.HttpContext.Request.Headers["Authorization"].FirstOrDefault();
+            string jwtTokenString = authorizationHeader.Replace("Bearer ", "");
+            var jwt = new JwtSecurityToken(jwtTokenString);
+            string username = jwt.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+
             return await _context.Kanbans
                 .Include(t => t.Columns)
                 .ThenInclude(t => t.Tasks)
@@ -38,6 +47,7 @@ namespace taskify.Server.Controllers.Kanbans
             var kanban = await _context.Kanbans
                 .Include(k => k.Columns) // Zaciągnij dane do pola Columns
                 .ThenInclude(k => k.Tasks)
+                .ThenInclude(k => k.Details)
                 .FirstOrDefaultAsync(k => k.Id == id);
 
             if (kanban == null)
