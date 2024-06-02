@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace taskify.Server.Models;
 
-[Keyless]
 [Table("UserPassword", Schema = "User")]
 public partial class UserPassword
 {
@@ -21,6 +20,4 @@ public partial class UserPassword
     [Column("is_expired")]
     public bool IsExpired { get; set; }
 
-    [ForeignKey("UserId")]
-    public virtual User User { get; set; } = null!;
 }

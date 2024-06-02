@@ -33,4 +33,8 @@ public partial class User
     [ForeignKey("Type")]
     [InverseProperty("Users")]
     public virtual UserType? UserType { get; set; }
+
+    public virtual ICollection<UserPassword> Passwords { get; set; } = new List<UserPassword>();
+
+    public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
 }
