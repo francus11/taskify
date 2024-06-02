@@ -3,7 +3,6 @@
 namespace taskify.Server.Models
 {
     [Table("RefreshToken", Schema = "User")]
-
     public class RefreshToken
     {
         [Column("id")]

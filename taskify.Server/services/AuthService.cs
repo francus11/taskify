@@ -51,6 +51,11 @@ namespace taskify.Server.Services
                         Password = request.Password,
                         IsExpired = false
                     }
+                },
+                UserData = new UserData
+                {
+                    Name = request.Name,
+                    Surname = request.Surname
                 }
             });
 
