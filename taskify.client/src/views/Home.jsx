@@ -23,13 +23,8 @@ class Login extends React.Component {
                     <div className='content'>
                         <div className='content__header'>
                             <h2 className='pageHeader'>Home</h2>
-                        
                         </div>
-
-
-
                     </div>
-                    
                 </main>
             </Layout>
         );
