@@ -25,6 +25,10 @@ const ProjectTile = ({ project }) => {
                     <p className='content'>{project.description}</p>
                 </div>
                 <div className="projectTile__body__footer">
+                    <div className="projectTile__body__footer__dueto">
+                        <p className="dueto">Due to</p>
+                        <p className="date">{project.date}</p>
+                    </div>
                     <motion.button onClick={open} className='button'>See</motion.button>
                 </div>
             </div>

@@ -41,10 +41,18 @@ const previevProjectModal = ({ handleClose, project }) => {
                     <div className='previevmodal__header'>
                         <h2 className='header'>{project.title}</h2>
                     </div>
+
                     <div className="previevmodal__description">
                         <h3 className="previevmodal__description__header">Description</h3>
                         <p className="previevmodal__description__text">
                             {project.description}
+                        </p>
+                    </div>
+
+                    <div className="previevmodal__description">
+                        <h3 className="previevmodal__description__header">Date</h3>
+                        <p className="previevmodal__description__text">
+                            {project.date}
                         </p>
                     </div>
                 </div>
