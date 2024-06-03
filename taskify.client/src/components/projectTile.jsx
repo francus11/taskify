@@ -1,35 +1,37 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import { motion, AnimatePresence } from 'framer-motion';
 
+import PreviewProjectModal from '../components/modals/previevProjectModal';
 
 import '../views/styles/global.css';
 import './styles/projectTile.css';
 
+const ProjectTile = ({ project }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const close = () => setIsOpen(false);
+    const open = () => setIsOpen(true);
 
-
-const ProjectTile = () => {
     return (
         <div className="projectTile">
             <div className='projectTile__logo'>
-                {/* <img src='https://via.placeholder.com/150' alt='project logo' /> */}
             </div>
             <div className='projectTile__body'>
                 <div className="projectTile__body__header">
-                    <h3 className='header'>Project Name</h3>
+                    <h3 className='header'>{project.title}</h3>
                     <BsThreeDotsVertical className='icon' />
-
                 </div>
                 <div className="projectTile__body__content">
-                    <p className='content'>Project Description Lorem ipsum cos tam cos tam cos tam no jakis tam opis co mozna do projektu dodac</p>
+                    <p className='content'>{project.description}</p>
                 </div>
                 <div className="projectTile__body__footer">
-                    <button className='button'>See</button>
+                    <motion.button onClick={open} className='button'>See</motion.button>
                 </div>
-                
             </div>
 
-            
+            <AnimatePresence initial={false} onExitComplete={() => null}>
+                {isOpen && <PreviewProjectModal handleClose={close} project={project} />}
+            </AnimatePresence>
         </div>
     );
 };
