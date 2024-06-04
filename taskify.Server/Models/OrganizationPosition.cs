@@ -17,4 +17,8 @@ public partial class OrganizationPosition
     [Column("description")]
     [StringLength(100)]
     public string Description { get; set; } = null!;
+
+    [InverseProperty("OrganizationPosition")]
+    public virtual ICollection<UserPosition> UserPositions { get; set; } = new List<UserPosition>();
+
 }
