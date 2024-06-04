@@ -30,6 +30,16 @@ namespace taskify.Server
                     };
                 });
             // Add services to the container.
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5173")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
 
             builder.Services.AddTransient<IAuthService, AuthService>();
             builder.Services.AddControllers();
@@ -71,6 +81,8 @@ namespace taskify.Server
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors();
 
             app.UseAuthentication();
             app.UseAuthorization();
