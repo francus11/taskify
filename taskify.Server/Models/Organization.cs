@@ -21,4 +21,12 @@ public partial class Organization
 
     [InverseProperty("Organization")]
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
+
+    [InverseProperty("Organization")]
+    public virtual ICollection<UserPosition> UserPositions { get; set; } = new List<UserPosition>();
+
+    public Organization(string name)
+    {
+        Name = name;
+    }
 }

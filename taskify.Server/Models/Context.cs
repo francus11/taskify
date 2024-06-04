@@ -127,6 +127,27 @@ public partial class Context : DbContext
         .WithOne()
         .HasForeignKey<UserData>(ud => ud.UserId);
 
+        modelBuilder.Entity<Organization>()
+            .HasMany(o => o.UserPositions)
+            .WithOne(up => up.Organization)
+            .HasForeignKey(up => up.OrganizationId);
 
+        modelBuilder.Entity<UserPosition>()
+            .HasKey(up => new { up.OrganizationId, up.UserId, up.PositionId });
+
+        modelBuilder.Entity<UserPosition>()
+            .HasOne(up => up.Organization)
+            .WithMany(o => o.UserPositions)
+            .HasForeignKey(up => up.OrganizationId);
+
+        modelBuilder.Entity<UserPosition>()
+            .HasOne(up => up.User)
+            .WithMany(u => u.UserPositions)
+            .HasForeignKey(up => up.UserId);
+
+        modelBuilder.Entity<UserPosition>()
+            .HasOne(up => up.OrganizationPosition)
+            .WithMany(op => op.UserPositions)
+            .HasForeignKey(up => up.PositionId);
     }
 }

@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace taskify.Server.Models;
 
-[Keyless]
 [Table("UserPosition", Schema = "Organization")]
 public partial class UserPosition
 {

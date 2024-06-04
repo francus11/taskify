@@ -38,4 +38,8 @@ public partial class User
     public virtual ICollection<UserPassword> Passwords { get; set; } = new List<UserPassword>();
 
     public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
+
+    [InverseProperty("User")]
+    public virtual ICollection<UserPosition> UserPositions { get; set; } = new List<UserPosition>();
+
 }
