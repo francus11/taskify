@@ -82,6 +82,8 @@ namespace taskify.Server
                 app.UseSwaggerUI();
             }
 
+            app.UseCors();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
