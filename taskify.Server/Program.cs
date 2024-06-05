@@ -42,6 +42,8 @@ namespace taskify.Server
             });
 
             builder.Services.AddTransient<IAuthService, AuthService>();
+            //builder.Services.AddScoped<ITeamService, TeamService>();
+            //builder.Services.AddScoped<IKanbanService, KanbanService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -57,7 +59,7 @@ namespace taskify.Server
                     BearerFormat = "JWT"
                 });
 
-                // Dodanie wymaganej autoryzacji do operacji, które tego wymagaj¹
+                // Dodanie wymaganej autoryzacji do operacji, ktï¿½re tego wymagajï¿½
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {

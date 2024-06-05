@@ -68,7 +68,11 @@ public partial class Context : DbContext
     public virtual DbSet<UserPosition> UserPositions { get; set; }
 
     public virtual DbSet<UserType> UserTypes { get; set; }
+
     public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
+
+    public virtual DbSet<UserProject> UserProjects { get; set; }
+    public virtual DbSet<BacklogItem> BacklogItems { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=taskify.database.windows.net;Database=taskify;User ID=user5;Password=TwojeHaslo123;");
@@ -149,5 +153,22 @@ public partial class Context : DbContext
             .HasOne(up => up.OrganizationPosition)
             .WithMany(op => op.UserPositions)
             .HasForeignKey(up => up.PositionId);
+
+        
+        modelBuilder.Entity<TeamMember>()
+                .HasKey(tm => new { tm.TeamId, tm.UserId });
+
+        modelBuilder.Entity<TeamMember>()
+                .HasOne(tm => tm.Team)
+                .WithMany(t => t.TeamMembers)
+                .HasForeignKey(tm => tm.TeamId);
+
+        modelBuilder.Entity<TeamMember>()
+                .HasOne(tm => tm.User)
+                .WithMany(u => u.TeamMembers)
+                .HasForeignKey(tm => tm.UserId);
+
+        base.OnModelCreating(modelBuilder);
+
     }
 }

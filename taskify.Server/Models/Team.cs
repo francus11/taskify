@@ -22,4 +22,5 @@ public partial class Team
 
     [InverseProperty("Team")]
     public virtual ICollection<Sprint> Sprints { get; set; } = new List<Sprint>();
+    public virtual ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
 }
