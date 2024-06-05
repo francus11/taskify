@@ -87,5 +87,38 @@ namespace taskify.Server.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("user/{userId}")]
+        public ActionResult<IEnumerable<Project>> GetUserProjects(int userId)
+        {
+            var userProjects = _context.UserProjects
+                .Where(up => up.UserId == userId)
+                .Select(up => up.Project)
+                .ToList();
+
+            return Ok(userProjects);
+        }
+
+        [HttpGet("{projectId}/teams")]
+        public ActionResult<IEnumerable<Team>> GetProjectTeams(int projectId)
+        {
+            var projectTeams = _context.Teams
+                .Where(t => t.ProjectId == projectId)
+                .ToList();
+
+            return Ok(projectTeams);
+        }
+
+        [HttpGet("{projectId}/backlog")]
+        public ActionResult<IEnumerable<BacklogItem>> GetProjectBacklog(int projectId)
+        {
+            var projectBacklog = _context.BacklogItems
+                .Where(b => b.ProjectId == projectId)
+                .ToList();
+
+            return Ok(projectBacklog);
+        }
+
+    
     }
 }

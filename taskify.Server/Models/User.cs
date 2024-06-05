@@ -42,4 +42,6 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<UserPosition> UserPositions { get; set; } = new List<UserPosition>();
 
+    public virtual ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
+
 }
