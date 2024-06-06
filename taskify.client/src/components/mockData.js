@@ -3,6 +3,18 @@ import { v4 as uuidv4 } from 'uuid';
 const mockData = [
     {
         id: uuidv4(),
+        title: "TO DO",
+        tasks: [
+            {
+                id: uuidv4(),
+                title: 'Pay for the rent',
+                description : 'Pay for the rent to avoid being homeless',
+                date : '2021-09-07'
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
         title: "IN PROGRESS",
         tasks: [
             {
@@ -27,6 +39,18 @@ const mockData = [
     },
     {
         id: uuidv4(),
+        title: "IN REVIEW",
+        tasks: [
+            {
+                id: uuidv4(),
+                title: 'Learn HTML',
+                description : 'Learn HTML to become a full-stack developer',
+                date : '2021-09-06'
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
         title: "COMPLETED",
         tasks: [
             {
@@ -40,30 +64,6 @@ const mockData = [
                 title: 'Learn Golang',
                 description : 'Learn Golang to become a full-stack developer',
                 date : '2021-09-05'
-            }
-        ]
-    },
-    {
-        id: uuidv4(),
-        title: "IN REVIEW",
-        tasks: [
-            {
-                id: uuidv4(),
-                title: 'Learn HTML',
-                description : 'Learn HTML to become a full-stack developer',
-                date : '2021-09-06'
-            }
-        ]
-    },
-    {
-        id: uuidv4(),
-        title: "TO DO",
-        tasks: [
-            {
-                id: uuidv4(),
-                title: 'Pay for the rent',
-                description : 'Pay for the rent to avoid being homeless',
-                date : '2021-09-07'
             }
         ]
     }

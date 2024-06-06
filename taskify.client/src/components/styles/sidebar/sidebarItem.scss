@@ -21,6 +21,11 @@
         justify-content: space-between;
         font-weight: 600;
 
+        a {
+            text-decoration: none;
+            
+        }
+
         &__icon {
                 font-size: 2rem;
                 cursor: pointer;
@@ -50,3 +55,4 @@
         color: white;
     }
 }
+

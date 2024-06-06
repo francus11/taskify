@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 import Backdrop from './backdrop/backdrop';
+import {Link} from "react-router-dom";
 
 import './taskModal.css';
 
@@ -39,22 +40,32 @@ const previevProjectModal = ({ handleClose, project }) => {
             >
                 <div className="previevmodal">
                     <div className='previevmodal__header'>
-                        <h2 className='header'>{project.title}</h2>
+                        <h2 className='header'>Choose team</h2>
                     </div>
 
-                    <div className="previevmodal__description">
-                        <h3 className="previevmodal__description__header">Description</h3>
-                        <p className="previevmodal__description__text">
-                            {project.description}
-                        </p>
-                    </div>
+                    <ul className='teamList'>
+                        <Link to='/dev'>
+                          <li>Dev</li>  
+                        </Link>
+                        
+                        <hr />
+                        <Link to='/front'>
+                          <li>Front</li>  
+                        </Link>
+                        
+                        <hr />
+                        <Link to='/back'>
+                          <li>Backend</li>  
+                        </Link>
+                        
+                    </ul>
 
-                    <div className="previevmodal__description">
+                    {/* <div className="previevmodal__description">
                         <h3 className="previevmodal__description__header">Date</h3>
                         <p className="previevmodal__description__text">
                             {project.date}
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
                 <button className='buttonaddtask' onClick={handleClose}>

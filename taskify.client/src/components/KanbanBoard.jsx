@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { v4 as uuidv4 } from 'uuid';
+
 import mockData from './mockData';
 import KanbanTask from './KanbanTask';
+import Modal from '../components/modals/taskModal';
+
 
 import './styles/kanban/kanbanBoard.css';
 
+
 const KanbanBoard = () => {
-    const [data, setData] = useState(mockData);
+    const [data, setData] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        // Load data from localStorage if available, otherwise use mockData
+        const storedData = localStorage.getItem('kanbanData');
+        if (storedData) {
+            setData(JSON.parse(storedData));
+        } else {
+            setData(mockData);
+        }
+    }, []);
 
     const onDragEnd = result => {
         if (!result.destination) return;
         const { source, destination } = result;
 
         if (source.droppableId === destination.droppableId) {
-            // If task is dropped in the same droppable
             const newData = Array.from(data);
             const sectionIndex = newData.findIndex(e => e.id === source.droppableId);
 
@@ -24,8 +39,8 @@ const KanbanBoard = () => {
 
             newData[sectionIndex].tasks = tasks;
             setData(newData);
+            localStorage.setItem('kanbanData', JSON.stringify(newData));
         } else {
-            // If task is moved to a different droppable
             const newData = Array.from(data);
             const sourceColIndex = newData.findIndex(e => e.id === source.droppableId);
             const destinationColIndex = newData.findIndex(e => e.id === destination.droppableId);
@@ -43,6 +58,7 @@ const KanbanBoard = () => {
             newData[destinationColIndex].tasks = destinationTask;
 
             setData(newData);
+            localStorage.setItem('kanbanData', JSON.stringify(newData));
         }
     };
 
@@ -54,10 +70,35 @@ const KanbanBoard = () => {
             return { ...section, tasks: updatedTasks };
         });
         setData(newData);
+        localStorage.setItem('kanbanData', JSON.stringify(newData));
     };
+
+    const addNewTask = (title, description, date) => {
+        const newTask = {
+            id: uuidv4(),
+            title,
+            description,
+            date
+        };
+
+        const newData = data.map(section => {
+            if (section.title === 'TO DO') {
+                return { ...section, tasks: [...section.tasks, newTask] };
+            }
+            return section;
+        });
+
+        setData(newData);
+        localStorage.setItem('kanbanData', JSON.stringify(newData));
+    };
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     return (
         <DragDropContext onDragEnd={onDragEnd}>
+            <button onClick={openModal} className='buttonAddTask'>Add Task</button>
+
             <div className="kanban">
                 {data.map(section => (
                     <Droppable key={section.id} droppableId={section.id.toString()}>
@@ -98,6 +139,12 @@ const KanbanBoard = () => {
                     </Droppable>
                 ))}
             </div>
+            {isModalOpen && (
+                <Modal 
+                    handleClose={closeModal} 
+                    addTask={addNewTask} 
+                />
+            )}
         </DragDropContext>
     );
 };

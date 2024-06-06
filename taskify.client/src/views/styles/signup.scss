@@ -1,8 +1,65 @@
 @import './mixins';
+@import './_variables';
 
 .welcome {
     @include flexCenter(column);
     height: 100vh;
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .input {
+        width: 30rem;
+        height: 5rem;
+        font-size: 1.5rem;
+        color: black;
+        padding: 1rem;
+        background-color: #E1E5F4;
+        border: 2px solid #D8DADC;
+        border-radius: 1rem;
+
+        &__error {
+            border: 2px solid red;
+        }
+
+
+
+
+
+    }
+
+    .p__error {
+        color: red;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .button {
+    width: 30rem;
+    height: 5rem;
+    background-color: $yellowGrade;
+
+    color: $purpleGrade;
+    font-size: 2rem;
+
+    border-radius: 1rem;
+    font-weight: bold;
+
+    border: 0;
+    cursor: pointer;
+
+    &:active{
+        transform: scale(0.98);
+    }
+    &:hover{
+        transform: scale(0.98);
+    }
+    
+    }
+
 
 }
 
@@ -14,3 +71,4 @@
     @include flexCenter(column);
     gap : 1.5rem;
 }
+

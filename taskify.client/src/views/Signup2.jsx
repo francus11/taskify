@@ -23,7 +23,7 @@ class Signup2 extends React.Component {
                 <StyledInput placeholder='Plain' text='Surname'></StyledInput>
                 <StyledInput placeholder='Dzikakotka' text='Username'></StyledInput>
                 <StyledInput placeholder='+48 123 456 789' text='Phone number'></StyledInput>              
-                <Link to='/home'>
+                <Link to='/log'>
                     <Button text='Sign up'></Button>
                 </Link>
                 

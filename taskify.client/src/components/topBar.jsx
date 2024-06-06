@@ -4,8 +4,10 @@ import './styles/topBar.css';
 import { createPopper } from '@popperjs/core';
 
 import Logo from '../images/taskify.svg';
-import Avatar from '../images/margot_avatar.jpg';
+import Avatar from '../images/stock.png';
 import Search from '../images/search_icon.svg';
+
+import { Link } from 'react-router-dom';
 
 
 const TopBar = () => {
@@ -80,8 +82,10 @@ const TopBar = () => {
             {showMenu && (
                 <div className="PopperMenu__container" ref={setPopperElement} style={popperInstanceRef.current?.state.styles.popper} {...popperInstanceRef.current?.state.attributes.popper}>
                     <ul className='PopperMenu__container__menu'>
-                        <li>Cipa</li>
-                        <li>Profile</li>
+                        <Link to='/profile'>
+                            <li>Profile</li>
+                        </Link>
+                        
                     </ul>
                 </div>
             )}

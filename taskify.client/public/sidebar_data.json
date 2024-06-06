@@ -6,12 +6,12 @@
             {
                 "title": "Home",
                 "icon": "bi-house-fill",
-                "path": "/"
+                "path": "/proj"
             },
             {
-                "title": "About",
+                "title": "Projects",
                 "icon": "bi-info-circle-fill",
-                "path": "/about"
+                "path": "/proj"
             },
             {
                 "title": "Contact",
@@ -38,66 +38,19 @@
         ]
     },
     {
-        "title": "Account",
+        "title": "Organization",
         "icon": "bi-info-circle-fill",
         "childrens": [
             {
-                "title": "Login",
-                "path": "/login"
-            },
-            {
-                "title": "Register",
-                "path": "/register"
-            },
-            {
-                "title": "Forgot Password",
-                "path": "/forgot-password"
-            },
-            {
-                "title": "Reset Password",
-                "path": "/reset-password"
+                "title": "Dashboard",
+                "path": "/proj"
             }
         ]
+        
     },
     {
         "title": "Profile",
-        "icon": "bi-person-fill",
-        "childrens": [
-            {
-                "title": "Profile",
-                "path": "/profile"
-            },
-            {
-                "title": "Settings",
-                "childrens": [
-                    {
-                        "title": "Account",
-                        "path": "/settings/account"
-                    },
-                    {
-                        "title": "Billing",
-                        "childrens": [
-                            {
-                                "title": "Payment",
-                                "path": "/settings/billing/payment"
-                            },
-                            {
-                                "title": "Subscription",
-                                "path": "/settings/billing/subscription"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Notifications",
-                        "path": "/settings/notifications"
-                    }
-                ]
-            },
-            {
-                "title": "Logout",
-                "path": "/logout"
-            }
-        ]
+        "path": "/profile"
     },
     {
         "title": "Advance",
@@ -105,25 +58,22 @@
         "childrens": [
             {
                 "title": "Search",
-                "path": "/search"
+                "path": "/proj"
             },
             {
                 "title": "History",
-                "path": "/history"   
+                "path": "/proj"  
             }
         ]
     },
     {
         "title": "Support",
         "icon": "bi-question-circle-fill",
-        "path": "/support"
+        "path": "/proj"
     },
     {
         "title": "Report Bug",
         "icon": "bi-bug",
-        "path": "/report-bug"
-    },
-    {
-        "title": "Margot Robbie"
+        "path": "/proj"
     }
 ]

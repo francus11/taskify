@@ -40,4 +40,8 @@
   border-radius: 100%;
   margin-right: 2rem;
   border: 0.3rem solid #FFCC3E;
+}
+.topBar a {
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=topBar.css.map */

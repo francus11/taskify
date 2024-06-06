@@ -1,0 +1,63 @@
+main {
+  display: flex;
+}
+main .content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main .content__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .content__body__avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+main .content__body__avatar img {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  border: 1rem #FFCC3E solid;
+}
+main .content__body__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main .content__body__info .input {
+  width: 30rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  color: black;
+  padding: 1rem;
+  background-color: #E1E5F4;
+  border: 2px solid #D8DADC;
+  border-radius: 1rem;
+}
+main .content__body .button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 30rem;
+  height: 5rem;
+  background-color: #FFCC3E;
+  color: #030047;
+  font-size: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+main .content__body .button:active {
+  transform: scale(0.98);
+}
+main .content__body .button:hover {
+  transform: scale(0.98);
+}/*# sourceMappingURL=profile.css.map */

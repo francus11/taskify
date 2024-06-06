@@ -2,4 +2,44 @@ main {
   display: flex;
   flex-direction: row;
   height: 100vh;
+}
+main .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+main .content__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-right: 3rem;
+  font-size: 2rem;
+}
+main .content__header button {
+  border: none;
+}
+main .content__header .buttonAddTask {
+  width: 12rem;
+  height: 4rem;
+  background-color: #FFCC3E;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+}
+main .content__header .buttonAddTask .icon {
+  font-size: 3rem;
+}
+main .content__header .buttonAddTask:hover {
+  transform: scale(0.97);
+}
+main .content__header__part {
+  display: flex;
+  gap: 1rem;
 }/*# sourceMappingURL=home.css.map */

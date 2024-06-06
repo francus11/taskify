@@ -1,47 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Layout from './Layout';
 import './styles/global.css';
-
 import './styles/signup.css';
 
-import Button from '../components/loginButton';
-import StyledInput from '../components/styledInput';
 import Facebook from '../components/facebookButton';
 
-import {Link} from "react-router-dom";
+import classNames from 'classnames';
 
-class Signup extends React.Component {
-    render() {
-        return (
-            <Layout>
+import { Link } from "react-router-dom";
+
+const Signup = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [repeatPassword, setRepeatPassword] = useState('');
+    const [loginError, setLoginError] = useState(false);
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleRepeatPasswordChange = (e) => {
+        setRepeatPassword(e.target.value);
+    };
+
+    const isPasswordMatch = () => {
+        return password === repeatPassword;
+    };
+
+    const handleSubmit = () => {
+        if (!isPasswordMatch()) {
+            // alert('Hasla nie sa takie same');
+            setLoginError(true);
+            
+        } else {
+            setLoginError(false);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+        }
+
+        
+    };
+
+    return (
+        <Layout>
             <main className='welcome'>
                 <div className='welcomeText'>
                     <h2 className='header'>Sign up</h2>
                 </div>
-                <StyledInput placeholder='example@gmail.com' text='Email'></StyledInput>
-                <StyledInput type='password' placeholder='password' text='Create password'></StyledInput>
-                <StyledInput type='password' placeholder='repeat password' text='Confirm password'></StyledInput>
+                <input type='text' placeholder='example@gmail.com' className='input' value={email} onChange={handleEmailChange}></input>
+                <input type='password' placeholder='password' className={classNames('input', { 'input__error': loginError })} value={password} onChange={handlePasswordChange}></input>
+                <input type='password' placeholder='repeat password' className={classNames('input', { 'input__error': loginError })} value={repeatPassword} onChange={handleRepeatPasswordChange}></input>
 
                 <div className='ContinueWith'>
                     <Facebook text='Continue with Facebook' type='fb' />
                     <Facebook text='Continue with Google' type='gl' />
                 </div>
-                
-                
-                <Link to='/reg2'>
-                   <Button text='Sign up'></Button> 
-                </Link>
-                <p className='subtext'>Already have account? <Link to='/log'><span className='subtext__span'>Log in</span></Link></p>
 
-                
+                {isPasswordMatch() ? (
 
+                    <button className='button' onClick={handleSubmit}>
+                    <Link to='/reg2'>
+                        Continue
+                    </Link>
+                    </button>
+                ) : (
+                    <button className='button' onClick={handleSubmit}>
+                        Continue
+                    </button>
+                )}
 
-            
+                <p className='subtext'>Already have an account? <Link to='/log'><span className='subtext__span'>Log in</span></Link></p>
             </main>
-            
-            </Layout>            
-        );
-    }
+        </Layout>
+    );
 }
+
 export default Signup;

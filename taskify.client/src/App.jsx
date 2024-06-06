@@ -10,6 +10,11 @@ import Home from "./views/Home";
 import Project from "./views/Project";
 import Kanban from "./views/KanbanPage";
 
+import Dev from "./views/Dev";
+import Front from "./views/Front";
+import Back from "./views/Back";
+import Profile from "./views/Profile";
+
 function App() {
   return (
     <Router>
@@ -22,6 +27,15 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/proj" element={<Project />} />
         <Route path="/kanban" element={<Kanban />} />
+
+        <Route path="/dev" element={<Dev />} />
+        <Route path="/front" element={<Front />} />
+        <Route path="/back" element={<Back />} />
+
+        <Route path="/profile" element={<Profile />} />
+
+
+
       </Routes>
     </Router>
   );

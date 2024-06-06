@@ -7,5 +7,55 @@ main {
 
     height: 100vh;
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .5rem;
+            margin-right: 3rem;
+        
+            font-size: 2rem;
+
+            button {
+                border: none;
+            }
+
+            .buttonAddTask {
+                width: 12rem;
+                height: 4rem;
+                background-color: $yellowGrade;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                cursor: pointer;
+                border: none;
+                border-radius: 1rem;
+
+                .icon {
+                    font-size: 3rem;
+                }
+
+                &:hover {
+                    transform: scale(0.97);
+                }
+            }
+
+            &__part {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+    }
+
 
 }

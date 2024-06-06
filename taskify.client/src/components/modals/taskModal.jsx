@@ -6,8 +6,6 @@ import Backdrop from './backdrop/backdrop';
 import './taskModal.css';
 import '../styles/styledinput.css';
 
-import axios from 'axios';
-
 const dropIn = {
     hidden: {
         y: '-100vh',
@@ -29,9 +27,10 @@ const dropIn = {
     }
 };
 
-const Modal = ({ handleClose }) => {
+const Modal = ({ handleClose, addTask }) => {
     const [taskName, setTaskName] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
+    const [taskDate, setTaskDate] = useState('');
 
     const taskNameChange = (event) => {
         setTaskName(event.target.value);
@@ -41,8 +40,12 @@ const Modal = ({ handleClose }) => {
         setTaskDescription(event.target.value);
     };
 
+    const taskDateChange = (event) => {
+        setTaskDate(event.target.value);
+    };
+
     const handleAddTask = () => {
-        alert(`${taskName} ${taskDescription}`);
+        addTask(taskName, taskDescription, taskDate);
         handleClose();
     };
 
@@ -56,7 +59,8 @@ const Modal = ({ handleClose }) => {
                 animate='visible'
                 exit='exit'
             >
-                 <div className='styledInputContainer'>
+                <h2 className='header'>Add Task</h2>
+                <div className='styledInputContainer'>
                     <p className='styledInputText'>Task name</p>
                     <input type='text' className='styledInput' value={taskName} onChange={taskNameChange} placeholder='Task name' />
                 </div>
@@ -64,7 +68,10 @@ const Modal = ({ handleClose }) => {
                     <p className='styledInputText'>Task description</p>
                     <input type='text' className='styledInput' value={taskDescription} onChange={taskDescriptionChange} placeholder='Task Description' />
                 </div>
-
+                <div className='styledInputContainer'>
+                    <p className='styledInputText'>Due date</p>
+                    <input type='date' className='styledInput' value={taskDate} onChange={taskDateChange} />
+                </div>
                 <button className='buttonaddtask' onClick={handleAddTask}>
                     Add Task
                 </button>

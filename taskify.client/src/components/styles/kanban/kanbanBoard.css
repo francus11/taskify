@@ -18,4 +18,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buttonAddTask {
+  width: 12rem;
+  height: 4rem;
+  background-color: #FFCC3E;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+}
+.buttonAddTask .icon {
+  font-size: 3rem;
+}
+.buttonAddTask:hover {
+  transform: scale(0.97);
 }/*# sourceMappingURL=kanbanBoard.css.map */
